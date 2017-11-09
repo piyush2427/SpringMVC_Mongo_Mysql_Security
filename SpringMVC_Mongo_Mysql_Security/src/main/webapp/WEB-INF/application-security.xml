@@ -17,6 +17,7 @@
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 		<form-login login-page="/login" default-target-url="/list" authentication-failure-url="/accessdenied" />
 		<logout  logout-success-url="/logout" invalidate-session="true"  />
+		<remember-me key="uniqueAndSecret" token-validity-seconds="86400"/>
 	</http>
 	
 	<beans:bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
