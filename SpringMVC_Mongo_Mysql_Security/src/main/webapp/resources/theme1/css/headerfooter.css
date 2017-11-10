@@ -1,14 +1,10 @@
-.fixed-header, .fixed-footer {
+.fixed-footer {
 	width: 100%;
 	position: fixed;
 	background: #FFF;
-	padding: 10px 0;
+	padding: 10px 10px 10px 10px;
 	color: #000;
 	box-shadow: 0px 0px 10px #888888;  
-}
-
-.fixed-header {
-	top: 0;
 }
 
 .fixed-footer {
@@ -21,7 +17,9 @@
 	margin: 0 auto; /* Center the DIV horizontally */
 	color:#000;
 }
-
+ body{        
+    padding-bottom: 40px;
+}
 nav a {
 	color: #000;
 	text-decoration: none;
@@ -31,3 +29,12 @@ nav a {
 .logout{
 	float:right;
 }
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }

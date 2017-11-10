@@ -8,69 +8,60 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/headerfooter.css" />"
 	rel="stylesheet">
+	 <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
+     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 <title>Employee Management</title>
 </head>
 <body>
 <%@ include file="header.jsp"%>
-	<h2>Employee Management Screen</h2>
-	<h6>
-		<a href="<c:url value='j_spring_security_logout'/>">Click here to
-			logout</a>
-	</h6>
-	<form:form method="post" action="add" commandName="employee">
+	
+<div class="container-fluid">
+ <div class="jumbotron"><h2>Employee Management Screen</h2></div>
 
-		<table>
-			<tr>
-				<td><form:label path="firstname">
+	<form:form method="post" action="add" commandName="employee" >
+		
+				<form:label class="control-label" path="firstname">
 						<spring:message code="label.firstname" />
-					</form:label></td>
-				<td><form:input path="firstname" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="lastname">
+					</form:label>
+				<form:input class="form-control" path="firstname" />
+			
+				<form:label class="control-label" path="lastname">
 						<spring:message code="label.lastname" />
-					</form:label></td>
-				<td><form:input path="lastname" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="email">
+					</form:label>
+				<form:input class="form-control"  path="lastname" />
+			<form:label  class="control-label" path="email">
 						<spring:message code="label.email" />
-					</form:label></td>
-				<td><form:input path="email" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="telephone">
+					</form:label>
+				<form:input  class="form-control"  path="email" />
+			<form:label  class="control-label" path="telephone">
 						<spring:message code="label.telephone" />
-					</form:label></td>
-				<td><form:input path="telephone" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit"
-					value="<spring:message code="label.add"/>" /></td>
-			</tr>
-		</table>
+					</form:label>
+				<form:input class="form-control"  path="telephone" /> <br/>
+			<input type="submit" class="btn btn-primary sharp" value="<spring:message code="label.add"/>" />
 	</form:form>
-
-
+	
 	<h3>Employees</h3>
 	<c:if test="${!empty employeeList}">
-		<table class="data">
+	 <div class="table-responsive">    
+		<table class="table table-hover">
 			<tr>
 				<th>Name</th>
 				<th>Email</th>
 				<th>Telephone</th>
-				<th>&nbsp;</th>
+				<th>Action</th>
 			</tr>
 			<c:forEach items="${employeeList}" var="emp">
 				<tr>
 					<td>${emp.lastname},${emp.firstname}</td>
 					<td>${emp.email}</td>
 					<td>${emp.telephone}</td>
-					<td><a href="delete/${emp.id}">delete</a></td>
+					<td><a class="btn btn-link" href="delete/${emp.id}">Delete</a></td>
 				</tr>
 			</c:forEach>
+	
 		</table>
+		</div>
 	</c:if>
-<%@ include file="footer.jsp"%>
+</div>
 </body>
 </html>

@@ -20,8 +20,11 @@
 				<input type='text' class="form-control" name='j_username'
 					placeholder="Username" required autofocus /> <input
 					type='password' class="form-control" name='j_password'
-					placeholder="Password" required> <label>Remember
-					Me:&nbsp;&nbsp;</label><input type="checkbox" name="remember-me" /> <input
+					placeholder="Password" required>
+					<div class="checkbox">
+  						<label><input type="checkbox" name="remember-me" /> Remember Me</label>
+					</div>
+				 <input
 					name="submit" class="btn btn-lg btn-primary sharp btn-block"
 					type="submit" value="Sign In">&nbsp;<input
 					class="btn btn-lg btn-default sharp btn-block" name="reset"
